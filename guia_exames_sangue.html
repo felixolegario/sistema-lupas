@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Exames de Sangue</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #007bff;
+      font-size: 18px;
+    }
+    .container {
+      padding: 20px;
+    }
+    h2 {
+      color: #007bff;
+    }
+    .exame-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .exame-list li {
+      background-color: #ffffff;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+    }
+    .exame-list li:hover {
+      background-color: #e9ecef;
+    }
+    .detalhes {
+      display: none;
+    }
+    .detalhes.active {
+      display: block;
+    }
+    footer {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Guia de Exames de Sangue</h1>
+  </header>
+
+  <nav>
+    <a href="#" onclick="mostrarExame('hemograma')">Hemograma</a>
+    <a href="#" onclick="mostrarExame('glicose')">Glicose</a>
+    <a href="#" onclick="mostrarExame('colesterol')">Colesterol</a>
+  </nav>
+
+  <div class="container">
+    <div id="hemograma" class="detalhes">
+      <h2>Hemograma</h2>
+      <p><strong>Preparação:</strong> Não é necessário jejum. Recomenda-se evitar exercício intenso no dia anterior.</p>
+      <p><strong>Coleta:</strong> A coleta de sangue é feita geralmente no braço.</p>
+      <p><strong>Interpretação:</strong> O hemograma avalia a quantidade de células sanguíneas. Resultados fora dos padrões podem indicar anemia, infecção ou outros distúrbios.</p>
+    </div>
+
+    <div id="glicose" class="detalhes">
+      <h2>Glicose</h2>
+      <p><strong>Preparação:</strong> Jejum de 8 horas é necessário.</p>
+      <p><strong>Coleta:</strong> A coleta é realizada no braço.</p>
+      <p><strong>Interpretação:</strong> A glicose elevada pode indicar diabetes. Valores abaixo de 70 mg/dL podem ser indicativos de hipoglicemia.</p>
+    </div>
+
+    <div id="colesterol" class="detalhes">
+      <h2>Colesterol</h2>
+      <p><strong>Preparação:</strong> Jejum de 12 horas é necessário.</p>
+      <p><strong>Coleta:</strong> A coleta é feita no braço.</p>
+      <p><strong>Interpretação:</strong> O colesterol total deve ser menor que 200 mg/dL. Valores mais altos podem aumentar o risco de doenças cardíacas.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Guia de Exames - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    function mostrarExame(exame) {
+      const exames = document.querySelectorAll('.detalhes');
+      exames.forEach(ex => ex.classList.remove('active'));
+      document.getElementById(exame).classList.add('active');
+    }
+  </script>
+</body>
+</html>
